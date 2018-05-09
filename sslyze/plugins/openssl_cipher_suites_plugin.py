@@ -524,8 +524,8 @@ class CipherSuiteScanResult(PluginScanResult):
 
         return cipher_xml
 
-    ACCEPTED_CIPHER_LINE_FORMAT = '        {cipher_name:<50}{dh_size:<15}{key_size:<10}    {status:<60}'
-    REJECTED_CIPHER_LINE_FORMAT = '        {cipher_name:<50}{error_message:<60}'
+    ACCEPTED_CIPHER_LINE_FORMAT = '        {cipher_name:<47}{dh_size:<15}{key_size:<10}'
+    REJECTED_CIPHER_LINE_FORMAT = '        {cipher_name:<47}'
 
     def as_text(self):
         # type: () -> List[Text]
@@ -601,8 +601,7 @@ class CipherSuiteScanResult(PluginScanResult):
 
         dh_txt = "{}-{} bits".format(cipher.dh_info["Type"], cipher.dh_info["GroupSize"]) if cipher.dh_info else '-'
         cipher_line_txt = self.ACCEPTED_CIPHER_LINE_FORMAT.format(cipher_name=cipher.name, dh_size=dh_txt,
-                                                                  key_size=keysize_str,
-                                                                  status=cipher.post_handshake_response)
+                                                                key_size=keysize_str)
         return cipher_line_txt
 
 

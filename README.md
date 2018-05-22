@@ -43,13 +43,6 @@ To update the repo, make sure you've activated the venv and then run the `update
     source ~/sslyze-dev/bin/activate
     chmod +x update.sh && ./update.sh
 
-SSLyze can be installed directly via pip:
-
-    pip install --upgrade setuptools
-    pip install --upgrade sslyze
-    python -m sslyze --regular www.yahoo.com:443 www.google.com "[2607:f8b0:400a:807::2004]:443"
-
-SSLyze has been tested on the following platforms: Windows 7 (32 and 64 bits), Debian 7 (32 and 64 bits), macOS Sierra
 
 Usage as a library
 ------------------

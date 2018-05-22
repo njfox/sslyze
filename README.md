@@ -29,6 +29,20 @@ Key features include:
 Getting started
 ---------------
 
+A clean virtualenv is recommended when installing this fork so that it can be used alongside the master repo when necessary. The following commands will install to a virtual environment in ~/sslyze-dev (you can customize this path to suit your needs):
+
+    git clone https://github.com/njfox/sslyze
+    virtualenv -p python3 ~/sslyze-dev
+    source ~/sslyze-dev/bin/activate
+    cd sslyze && python setup.py install
+
+To run this tool, activate the venv with `source ~/sslyze-dev/bin/activate`. To leave the venv, type `deactivate`.
+
+To update the repo, make sure you've activated the venv and then run the `update.sh` script:
+
+    source ~/sslyze-dev/bin/activate
+    chmod +x update.sh && ./update.sh
+
 SSLyze can be installed directly via pip:
 
     pip install --upgrade setuptools
